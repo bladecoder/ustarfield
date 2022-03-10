@@ -1,0 +1,94 @@
+<level>
+    <load name="/paths.evt"/>
+
+    <!-- SOUNDS -->
+    <!--sound name="sbomb" defined="true"/>
+    <sound name="laser" defined="true"/>
+    <sound name="bonus" defined="true"/-->
+    <!-- preloading of sounds -->
+    <!--sound name="sbomb"/>
+    <sound name="laser"/-->
+
+    <!-- BIG EXPLOSION -->
+    <!-- defineobject name="expl24" begin="sbomb"
+        width="5" height="1" delay="200"/-->
+    
+    <defineobject name="expl24"
+        width="5" height="1" delay="200"/>
+    
+    <background name="expl" defined="true"
+        path="pStatic" object="expl24" parent="*"/>    
+
+
+    <!-- LITTLE EXPLOSION -->
+    <defineobject name="expl12"
+        width="5" height="1" delay="200"/>
+    
+    <background name="lexpl" defined="true"
+        path="pStatic" object="expl12" parent="*"/>    
+
+
+    <!-- ENEMY BULLETS -->
+    <defineobject name="bullet2" bulletCollision="false"
+        width="1" height="1" energy="1" damage="20" end="lexpl"/>
+  
+    <enemy name="pbullet" defined="true"
+        path="pTPlayer" object="bullet2" parent="*"/>  
+
+    <enemy defined="true" name="rbullet" path="pRight" 
+        object="bullet2" parent="*"/>
+   
+    <enemy defined="true" name="lbullet" path="pLeft" 
+        object="bullet2" parent="*"/> 
+    
+    <enemy defined="true" name="tbullet" path="pTop" 
+        object="bullet2" parent="*"/>
+    
+    <enemy defined="true" name="bbullet" path="pBottom" 
+        object="bullet2" parent="*"/>
+     
+    <enemy defined="true" name="brbullet" path="pBottomRight" 
+        object="bullet2" parent="*"/>
+   
+    <enemy defined="true" name="blbullet" path="pBottomLeft" 
+        object="bullet2" parent="*"/>
+
+
+    <!-- PLAYER BULLETS -->
+    <!-- defineobject name="bullet1" -->
+    <!--defineobject name="bullet1" begin="laser"
+        width="1" height="1" damage="20" energy="20" end="lexpl"/-->
+   <defineobject name="bullet1"
+        width="1" height="1" damage="20" energy="20" end="lexpl"/>
+    
+    <definepath name="pBullet1" type="vector" speed="90">    
+        <point x="10" y="-9" />
+        <point x="0" y="-1" />
+    </definepath>
+ 
+    <playerbullet name="playerbullet1" defined="true"
+        path="pBullet1" object="bullet1" parent="*"/>    
+
+    <!--defineobject name="bullet3" -->
+    <!--defineobject name="bullet3" begin="laser"
+        width="1" height="1" damage="10" energy="10" end="lexpl"/-->
+        <defineobject name="bullet3"
+        width="1" height="1" damage="10" energy="10" end="lexpl"/>
+    
+    <playerbullet name="playerbullet3" defined="true"
+        path="pBullet1" object="bullet3" parent="*"/>    
+
+    <!-- PLAYER -->
+    <defineobject name="player" end="expl"
+        width="5" height="2" fire="playerbullet3" damage="100" delay="150"/>
+   
+    <definepath name="pPlayer" type="keyboard" speed="60">    
+        <point percent="true" x="35" y="80" />
+    </definepath>
+ 
+    <player name="player"
+        path="pPlayer" object="player"/>    
+
+
+    <load name="/objects.evt"/>
+</level>

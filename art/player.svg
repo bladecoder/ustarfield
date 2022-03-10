@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd"
+[
+ <!ATTLIST svg
+  xmlns:xlink CDATA #FIXED "http://www.w3.org/1999/xlink">
+]>
+<!-- Created with Sodipodi ("http://www.sodipodi.com/") -->
+<svg
+   id="svg101"
+   sodipodi:version="0.31"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   width="210mm"
+   height="297mm"
+   sodipodi:docbase="/home/rgarcia/prj/ustarfield/art/"
+   sodipodi:docname="/home/rgarcia/prj/ustarfield/art/player">
+  <defs
+     id="defs103" />
+  <sodipodi:namedview
+     id="base" />
+  <path
+     style="font-size:12;fill:#aa6700;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;fill-opacity:1;"
+     d="M 357.088 146.959 L 268.7 588.609 L 450.781 589.493 L 357.088 146.959 z "
+     id="path120"
+     transform="matrix(1,0,0,1.07256,19.4455,373.248)"
+     sodipodi:nodetypes="cccc" />
+  <path
+     style="font-size:12;fill:#a76700;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;fill-opacity:1;"
+     d="M 288.146 1001.1 L 87.5045 1001.1 L 88.3884 880.889 L 130.815 951.599 L 309.359 890.612 L 288.146 1001.1 z "
+     id="path136"
+     sodipodi:nodetypes="cccccc"
+     transform="translate(0,-3.05176e-05)" />
+  <path
+     style="font-size:12;fill:#a76700;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;fill-opacity:1;"
+     d="M 288.146 1001.1 L 87.5045 1001.1 L 88.3884 880.889 L 130.815 951.599 L 309.359 890.612 L 288.146 1001.1 z "
+     id="path137"
+     sodipodi:nodetypes="cccccc"
+     transform="matrix(-1,0,0,1,755.72,-1.76776)" />
+</svg>

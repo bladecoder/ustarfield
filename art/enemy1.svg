@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd"
+[
+ <!ATTLIST svg
+  xmlns:xlink CDATA #FIXED "http://www.w3.org/1999/xlink">
+]>
+<!-- Created with Sodipodi ("http://www.sodipodi.com/") -->
+<svg
+   id="svg107"
+   sodipodi:version="0.31"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   width="210mm"
+   height="297mm"
+   sodipodi:docbase="/home/rgarcia/prj/ustarfield/art/"
+   sodipodi:docname="/home/rgarcia/prj/ustarfield/art/enemy1.svg">
+  <defs
+     id="defs109">
+    <linearGradient
+       id="linearGradient118">
+      <stop
+         style="stop-color:#ff0000;stop-opacity:1;"
+         offset="0.000000"
+         id="stop119" />
+      <stop
+         style="stop-color:#aa0000;stop-opacity:1;"
+         offset="1.000000"
+         id="stop120" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient112">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0.000000"
+         id="stop113" />
+      <stop
+         style="stop-color:#a2b5ad;stop-opacity:1;"
+         offset="1.000000"
+         id="stop114" />
+    </linearGradient>
+    <linearGradient
+       xlink:href="#linearGradient118"
+       id="linearGradient115"
+       x1="1.74486e-08"
+       y1="-4.90902e-08"
+       x2="1"
+       y2="-4.90902e-08"
+       gradientUnits="objectBoundingBox"
+       spreadMethod="pad" />
+    <radialGradient
+       xlink:href="#linearGradient118"
+       id="radialGradient116"
+       cx="0.5"
+       cy="0.5"
+       fx="0.5"
+       fy="0.5"
+       r="0.5"
+       gradientUnits="objectBoundingBox"
+       spreadMethod="pad" />
+    <radialGradient
+       xlink:href="#linearGradient112"
+       id="radialGradient117" />
+  </defs>
+  <sodipodi:namedview
+     id="base" />
+  <path
+     sodipodi:type="arc"
+     style="stroke:none;fill:url(#radialGradient117);fill-opacity:1;fill-rule:evenodd;stroke-opacity:1;stroke-width:1pt;stroke-linejoin:miter;stroke-linecap:butt;"
+     id="path110"
+     d="M 882.997681 674.169495 A 307.487091 307.487122 0 1 0 268.023529,674.169495 A 307.487 307.487 0 1 0 882.998 674.169 L 575.510620 674.169495 z"
+     sodipodi:cx="575.510620"
+     sodipodi:cy="674.169495"
+     sodipodi:rx="307.487091"
+     sodipodi:ry="307.487122"
+     transform="translate(-198.962,-85.5045)" />
+  <path
+     sodipodi:type="arc"
+     style="stroke:#000000;fill:url(#radialGradient116);fill-opacity:1;fill-rule:evenodd;stroke-opacity:1;stroke-width:1.25263;stroke-linejoin:miter;stroke-linecap:butt;stroke-dasharray:none;"
+     id="path111"
+     d="M 882.997681 674.169495 A 307.487091 307.487122 0 1 0 268.023529,674.169495 A 307.487 307.487 0 1 0 882.998 674.169 L 575.510620 674.169495 z"
+     sodipodi:cx="575.510620"
+     sodipodi:cy="674.169495"
+     sodipodi:rx="307.487091"
+     sodipodi:ry="307.487122"
+     transform="matrix(0.558824,0,0,0.558824,54.1178,217.678)" />
+</svg>

@@ -1,0 +1,129 @@
+<project name="ustarfield" default="compile" basedir=".">
+  <property file="build.properties"/>
+  <property file="${user.home}/build.properties"/>
+
+  <property name="midp" value="/lang/j2mewtk"/>
+  <property name="midp_lib" value="${midp}/lib/midpapi.zip"/>
+  <property name="proguard" value="${midp}/lib/proguard.jar"/>
+  <property name="app.name" value="myapp"/>
+  <property name="xercespath" value="/usr/share/java/xercesImpl.jar"/>
+  <property name="arch" value="nokia"/>
+  <property name="screen" value="hi"/>
+  <property name="gcc.home" value="./gcc"/>
+  <property name="gcc" value="${gcc.home}/src/${arch}"/>
+
+  <target name="compile" depends="init">
+    <mkdir dir="tmpclasses"/>
+    
+    <javac destdir="tmpclasses" srcdir="${gcc}"
+        bootclasspath="${midp_lib}" target="1.1" 
+        classpath="${midp}/lib/nokiaui.zip"/>
+
+    <javac destdir="tmpclasses" srcdir="src"
+        bootclasspath="${midp_lib}" target="1.1" 
+        classpath="${midp}/lib/nokiaui.zip:tmpclasses"/>
+  </target>
+  
+  <target name="init">
+    <tstamp/>
+  </target>
+
+  <target name="preverify" depends="compile">
+    <mkdir dir="classes"/>
+    <exec executable="${midp}/bin/preverify">
+      <arg line="-classpath ${midp_lib}:${midp}/lib/nokiaui.zip"/>
+      <arg line="-d classes"/>
+      <arg line="tmpclasses"/>
+    </exec>
+  </target>
+
+  <target name="dist" depends="preverify">
+    <mkdir dir="bin"/>
+    <jar basedir="classes"
+        jarfile="bin/${app.name}.jar"
+        manifest="bin/MANIFEST.MF">
+        <fileset dir="res/${screen}"/>
+        <fileset dir="tmpclasses" includes="*.evt"/>
+    </jar>
+    <!--copy file="bin/${app.name}.jad"
+        tofile="bin/${app.name}.jad"/-->
+    <exec executable="bin/genjad"/>
+  </target>
+
+  <target name="run">
+    <exec executable="${midp}/bin/emulator">
+      <arg line="-Xdescriptor:bin/${app.name}.jad"/>
+      <!--arg line="-Xverbose:exceptions"/-->
+    </exec>
+  </target>
+ 
+  <target name="debug">
+    <exec executable="${midp}/bin/emulator">
+      <arg line="-Xdescriptor:bin/${app.name}.jad"/>
+      <arg line="-Xdebug"/>
+      <arg line="-Xrunjdwp:transport=dt_socket,address=5000,server=y"/>
+    </exec>
+  </target>
+                                                                            
+  <target name="clean"
+   description="Delete old build and dist directories">
+    <delete dir="classes"/>
+    <delete dir="parserclasses"/>
+    <delete dir="tmpclasses"/>
+    <delete dir="tmplib"/>
+    <delete file="bin/${app.name}.jar"/>
+    <!--delete file="bin/${app.name}.jad"/-->
+  </target>
+
+  <!--target name="levels"
+   description="Make levels xml2lvl" depends="levelparser">
+    <java classname="LevelParser">
+      <classpath>
+        <pathelement location="${xercespath}"/>
+        <pathelement path="parserclasses"/>
+        <pathelement path="tmpclasses"/>
+      </classpath>
+      <arg value="levels/test.xml"/>
+      <arg value="res/test.evt"/>
+    </java>
+  </target-->
+  
+  <target name="levelparser" depends="init">
+    <mkdir dir="parserclasses"/>
+    
+    <javac destdir="parserclasses" includes="starfield/event/*.java" srcdir="src" debug="true"/>
+    <javac destdir="parserclasses" srcdir="levelparser" debug="true" 
+        classpath="${xercespath}"/>
+  </target>
+
+  <target name="applet" depends="init">
+    <mkdir dir="tmpclasses"/>
+    <!--mkdir dir="tmpclasses/META-INF"/-->
+    <javac destdir="tmpclasses" srcdir="${gcc}" debug="true"/>
+    <javac destdir="tmpclasses" srcdir="src" debug="true"
+      classpath="tmpclasses" />
+    <copy file="bin/${app.name}-applet.html" todir="tmpclasses"/>
+    <!--copy file="bin/MANIFEST.MF" todir="tmpclasses/META-INF" /-->
+    <copy  todir="tmpclasses">
+        <fileset dir="res/${screen}"/>
+    </copy>
+  </target>
+
+  <target name="runapplet" depends="applet">
+    <exec executable="appletviewer">
+      <arg line="tmpclasses/${app.name}-applet.html"/>
+    </exec>
+
+  </target>
+  
+  <target name="distapplet" depends="applet">
+    <mkdir dir="bin"/>
+    <jar basedir="tmpclasses"
+        jarfile="bin/${app.name}-applet.jar">
+    </jar>
+  </target>
+
+  <target name="mkalldist">
+  </target>
+
+</project>

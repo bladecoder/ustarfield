@@ -1,0 +1,13 @@
+#!/bin/sh
+
+ant levelparser
+mkdir tmpclasses
+
+cd levels/hi
+LEVELS=`ls *.xml`
+cd ../..
+
+for a in $LEVELS; do
+echo $a
+java -classpath parserclasses:/usr/share/java/xercesImpl.jar LevelParser levels/hi/$a tmpclasses/`basename $a .xml`.evt
+done

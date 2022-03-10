@@ -1,0 +1,106 @@
+#!/bin/sh
+CLASSPATH=$CLASSPATH:/home/rgarcia/programs/proguard.jar
+MIDP=/home/rgarcia/programs/WTK2.5.1EA/
+MIDP2=/home/rgarcia/programs/WTK2.5.1EA/
+PRJ=starfield
+MIDLET=starfield.StarfieldMIDlet
+RTJAR=/usr/lib/jvm/java-1.5.0-gcj-4.2-1.5.0.0/jre/lib/rt.jar
+PREVERIFY=/home/rgarcia/programs/WTK2.5.1EA/bin/preverify
+#PREVERIFY=/home/rgarcia/programs/wtk/bin/preverify
+
+echo ##############################################################################
+echo -e "\n\nDEFAULT HI RES..."
+ant clean
+mklevhi
+ant -Dgcc.home=./gcc -Darch=default -Dscreen=hi  -Dmidp=${MIDP} dist
+java -classpath $CLASSPATH proguard.ProGuard -libraryjars ${MIDP}/lib/midpapi.zip -injars  bin/${PRJ}.jar -outjar bin/${PRJ}-hi.jar -overloadaggressively -keep public class $MIDLET -keep 'public class i18n.*' -keep 'public class commons.i18n.*'
+
+echo ##############################################################################
+echo -e "\n\nDEFAULT LOW RES..."
+ant clean
+mklevlo
+ant -Dgcc.home=./gcc -Darch=default -Dscreen=lo  -Dmidp=${MIDP} dist
+java -classpath $CLASSPATH proguard.ProGuard -libraryjars ${MIDP}/lib/midpapi.zip -injars  bin/${PRJ}.jar -outjar bin/${PRJ}-lo.jar -overloadaggressively -keep public class $MIDLET -keep 'public class i18n.*' -keep 'public class commons.i18n.*'
+
+echo ##############################################################################
+echo -e "\n\nNOKIA S60..."
+ant clean
+mklevhi
+ant -Dgcc.home=./gcc -Darch=nokia -Dscreen=hi -Dmidp=${MIDP} dist
+java -classpath $CLASSPATH proguard.ProGuard -libraryjars ${MIDP}/lib/midpapi.zip:${MIDP}/lib/nokiaui.zip -injars  bin/${PRJ}.jar -outjar bin/${PRJ}-s60.jar -overloadaggressively -keep public class $MIDLET -keep 'public class i18n.*' -keep 'public class commons.i18n.*'
+
+echo ##############################################################################
+echo -e "\n\nNOKIA S40..."
+ant clean
+mklevlo
+ant -Dgcc.home=./gcc -Darch=nokia -Dscreen=lo -Dmidp=${MIDP} dist
+java -classpath $CLASSPATH proguard.ProGuard -libraryjars ${MIDP}/lib/midpapi.zip:${MIDP}/lib/nokiaui.zip -injars  bin/${PRJ}.jar -outjar bin/${PRJ}-s40.jar -overloadaggressively -keep public class $MIDLET -keep 'public class i18n.*' -keep 'public class commons.i18n.*'
+
+echo ##############################################################################
+echo -e "\n\nMOTOROLA V300..."
+ant clean
+mklevhi
+ant -Dgcc.home=./gcc -Darch=midp2.0 -Dscreen=hi  -Dmidp=${MIDP2} dist
+java -classpath $CLASSPATH proguard.ProGuard -libraryjars ${MIDP2}/lib/midpapi.zip -injars  bin/${PRJ}.jar -outjar bin/${PRJ}-v300.jar -overloadaggressively -keep public class $MIDLET -keep 'public class i18n.*' -keep 'public class commons.i18n.*'
+
+
+echo ##############################################################################
+echo -e "\n\nNOKIA S60 MMAPI..."
+ant clean
+mklevhi
+ant -Dgcc.home=./gcc -Darch=nokia -Dscreen=hi  -Dmidp=${MIDP} preverify
+rm -rf tmpclasses/javax/microedition/media
+cp res/hi/* tmpclasses
+cd tmpclasses
+jar cvf ../bin/${PRJ}.jar *
+cd ..
+java -classpath $CLASSPATH proguard.ProGuard -libraryjars ${MIDP}/lib/midpapi.zip:${MIDP}/lib/nokiaui.zip:${MIDP}/lib/mma.zip -injars  bin/${PRJ}.jar -outjar bin/${PRJ}-s60mm.jar -overloadaggressively -keep public class $MIDLET -keep 'public class i18n.*' -keep 'public class commons.i18n.*'
+
+
+#echo ##############################################################################
+#echo -e "\n\nSONY-ERICSSON T610..."
+#ant clean
+#mklevlo
+#ant -Dgcc.home=./gcc -Darch=default -Dscreen=t610  -Dmidp=${MIDP} dist
+#java -classpath $CLASSPATH proguard.ProGuard -libraryjars ${MIDP}/lib/midpapi.zip -injars  bin/${PRJ}.jar -outjar bin/${PRJ}-t610.jar -overloadaggressively -keep public class $MIDLET -keep 'public class i18n.*' -keep 'public class commons.i18n.*'
+
+
+echo ##############################################################################
+echo -e "\n\nAPPLET..."
+ant clean
+mklevhi
+ant -Dgcc.home=./gcc -Darch=applet -Dscreen=hi applet
+ant -Dgcc.home=./gcc -Darch=applet -Dscreen=hi distapplet
+mv bin/${PRJ}-applet.jar bin/${PRJ}-applet-in.jar
+java -classpath $CLASSPATH proguard.ProGuard -libraryjars $RTJAR -injars  bin/${PRJ}-applet-in.jar -outjar bin/${PRJ}-applet.jar -overloadaggressively -defaultpackage '' -keep public class $MIDLET -keep public class javax.ContainerApplet -keep 'public class i18n.*' -keep 'public class commons.i18n.*'
+
+rm bin/${PRJ}-applet-in.jar 
+
+
+echo ##############################################################################
+echo -e "\n\nRe-reverifying..."
+cd bin
+${PREVERIFY} -classpath ${MIDP}/lib/midpapi.zip ${PRJ}-hi.jar
+rm ${PRJ}-hi.jar
+
+${PREVERIFY} -classpath ${MIDP}/lib/midpapi.zip ${PRJ}-lo.jar
+rm ${PRJ}-lo.jar
+
+${PREVERIFY} -classpath ${MIDP}/lib/midpapi.zip:${MIDP}/lib/nokiaui.zip ${PRJ}-s60.jar
+rm ${PRJ}-s60.jar
+
+${PREVERIFY} -classpath ${MIDP}/lib/midpapi.zip:${MIDP}/lib/nokiaui.zip ${PRJ}-s40.jar
+rm ${PRJ}-s40.jar
+
+${PREVERIFY} -classpath ${MIDP2}/lib/midpapi.zip ${PRJ}-v300.jar
+rm ${PRJ}-v300.jar
+
+${PREVERIFY} -classpath ${MIDP}/lib/midpapi.zip:${MIDP}/lib/nokiaui.zip:${MIDP}/lib/mma.zip ${PRJ}-s60mm.jar
+rm ${PRJ}-s60mm.jar
+
+#${PREVERIFY} -classpath ${MIDP}/lib/midpapi.zip ${PRJ}-t610.jar
+#rm ${PRJ}-t610.jar
+
+mv output/*.jar .
+rm -rf output
+cd ..

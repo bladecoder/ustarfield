@@ -1,0 +1,55 @@
+<project name="MyProject" default="compile" basedir=".">
+  <property file="build.properties"/>
+  <property file="${user.home}/build.properties"/>
+
+  <property name="midp" value="/lang/j2mewtk"/>
+  <property name="midp_lib" value="${midp}/lib/midpapi.zip"/>
+  <property name="app.name" value="myapp"/>
+  <property name="src" value="default"/>
+
+  <target name="compile" depends="init">
+    <mkdir dir="tmpclasses"/>
+    <javac destdir="tmpclasses" srcdir="${src}"
+        bootclasspath="${midp_lib}" target="1.1"/>
+  </target>
+  
+  <target name="init">
+    <tstamp/>
+  </target>
+
+  <target name="preverify" depends="compile">
+    <mkdir dir="classes"/>
+    <exec executable="${midp}/bin/preverify">
+      <arg line="-classpath ${midp_lib}"/>
+      <arg line="-d classes"/>
+      <arg line="tmpclasses"/>
+    </exec>
+  </target>
+
+  <target name="dist" depends="preverify">
+    <mkdir dir="bin"/>
+    <jar basedir="classes"
+        jarfile="bin/${app.name}.jar"
+        manifest="bin/MANIFEST.MF">
+      <fileset dir="res"/>
+    </jar>
+    <!--copy file="bin/${app.name}.jad"
+        tofile="bin/${app.name}.jad"/-->
+    <exec executable="bin/genjad"/>
+  </target>
+
+  <target name="run">
+    <exec executable="${midp}/bin/emulator">
+      <arg line="-Xdescriptor:bin/${app.name}.jad"/>
+    </exec>
+  </target>
+                                                                            
+  <target name="clean"
+   description="Delete old build and dist directories">
+    <delete dir="tmpclasses"/>
+    <delete dir="classes"/>
+    <delete file="bin/${app.name}.jar"/>
+    <!--delete file="bin/${app.name}.jad"/-->
+  </target>
+
+</project>

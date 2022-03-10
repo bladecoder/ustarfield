@@ -1,0 +1,112 @@
+<level>
+    <text name="LEVEL 1" />
+
+    <load name="/init.evt" />
+    <text name="" wait="3000" /> <!-- delete 'level 1' text -->
+    
+    <!-- TEMP TO TEST -->
+    <!--speed name="speed" object="player" value="50"/>
+    <fire  name="fire" object="player" event="playerbullet1"/>
+    <life  name="life" object="player" value="20"/-->
+       
+    <load name="/p1.evt" />
+
+    <text wait="3000" name="LEVEL 2" />
+    <text name="" wait="5000" />
+    <load name="/p2.evt" />
+    
+    <text wait="3000" name="LEVEL 3" />
+    <text name="" wait="5000" />
+    <load name="/p3.evt" />
+    <enemy wait="8000" name="block0" object="block" path="pC2"/>
+    <enemy name="block1" object="block" path="pC5"/>
+    
+    <enemy wait="2000" name="bh1" path="pHRcenter" object="ebh"/>
+
+    <enemy wait="2000" name="block4" object="block" path="pC2"/>
+    <enemy name="block5" object="block" path="pC5"/>
+
+    <enemy wait="2000" name="bomb0" object="bomb" path="pC2"/>
+  
+    <enemy wait="2000" name="block7" object="block" path="pC2"/>
+    <enemy name="block8" object="block" path="pC5"/>
+    
+    <enemy wait="2000" name="bomb1" object="bomb" path="pC5"/>
+
+    <enemy wait="2000" name="block9" object="block" path="pC2"/>
+    <enemy name="block10" object="block" path="pC5"/>
+   
+    <enemy wait="2000" name="bomb2" object="bomb" path="pC2"/>
+  
+    <enemy wait="2000" name="block11" object="block" path="pC2"/>
+    <enemy name="block12" object="block" path="pC5"/>
+    
+    <enemy wait="2000" name="bh2" path="pHRcenter" object="lbh"/>
+    <enemy name="rtype0" path="pSC3" object="rtype" />
+    <enemy wait="400" name="rtype1" path="pSC3" object="rtype" />
+
+    <enemy wait="2000" name="block13" object="block" path="pC2"/>
+    <enemy name="block14" object="block" path="pC5"/>
+    
+    <enemy wait="2000" name="rtype2" path="pSC6" object="rtype" />
+    <enemy wait="400" name="rtype3" path="pSC6" object="rtype" />
+    
+    <enemy wait="300" name="rtype0" path="pFly" object="rtype" />
+    <enemy wait="300" name="rtype1" path="pFly" object="rtype" />
+    <enemy wait="400" name="rtype2" path="pFly" object="rtype" />
+    <enemy wait="400" name="rtype5" path="pEllipse" object="rtype"/>
+    <enemy wait="400" name="rtype3" path="pFly" object="rtype" />
+    <enemy wait="2000" name="rtype4" path="pFly" object="rtype" />
+    <enemy wait="400" name="rtype6" path="pEllipse" object="rtype"/>
+    <enemy wait="400" name="rtype7" path="pEllipse" object="rtype"/>
+    <enemy wait="400" name="rtype8" path="pFly" object="rtype" />
+    <enemy wait="400" name="rtype9" path="pEllipse" object="rtype"/>
+    <enemy wait="400" name="rtype10" path="pEllipse" object="rtype"/>
+    <enemy wait="2000" name="rtype11" path="pEllipse" object="rtype"/>
+    <enemy wait="400" name="rtype12" path="pEllipse" object="rtype"/>
+    
+    <enemy wait="5000" name="rtype0" path="pFly" object="rtype" />
+    <enemy wait="300" name="rtype1" path="pFly" object="rtype" />
+    <enemy wait="400" name="rtype2" path="pFly" object="rtype" />
+    <enemy wait="400" name="rtype5" path="pEllipse" object="rtype"/>
+    <enemy wait="400" name="rtype3" path="pFly" object="rtype" />
+    <enemy wait="2000" name="rtype4" path="pFly" object="rtype" />
+    <enemy wait="400" name="rtype6" path="pEllipse" object="rtype"/>
+    <enemy wait="400" name="rtype7" path="pEllipse" object="rtype"/>
+    <enemy wait="400" name="rtype8" path="pFly" object="rtype" />
+    <enemy wait="400" name="rtype9" path="pEllipse" object="rtype"/>
+    <enemy wait="400" name="rtype10" path="pEllipse" object="rtype"/>
+    <enemy wait="2000" name="rtype11" path="pEllipse" object="rtype"/>
+    <enemy wait="400" name="rtype12" path="pEllipse" object="rtype"/>
+
+    <enemy wait="8000" name="block30" object="block3" path="pRZig"/>
+    <enemy name="block31" object="block3" path="pLZig"/>
+    <enemy name="rafter0" object="rafter" path="pRF" parent="block30"/>
+    <enemy name="rafter1" object="rafter" path="pLF" parent="block31"/>
+
+    <enemy wait="10000" name="block32" object="block3" path="pRZig"/>
+    <enemy name="block33" object="block3" path="pLZig"/>
+    <enemy name="rafter2" object="rafter" path="pRF" parent="block32"/>
+    <enemy name="rafter3" object="rafter" path="pLF" parent="block33"/>
+
+    <enemy wait="10000" name="block34" object="block3" path="pRZig"/>
+    <enemy name="block35" object="block3" path="pLZig"/>
+    <enemy name="rafter4" object="rafter" path="pRF" parent="block34"/>
+    <enemy name="rafter5" object="rafter" path="pLF" parent="block35"/>
+
+    <enemy wait="12000" name="melon0" object="melon2" path="pRandom"/>
+    <enemy name="cone0" object="bazooka" path="pConeR" parent="melon0"/>
+    <enemy name="cone1" object="bazooka" path="pConeL" parent="melon0"/>
+    <enemy name="shield0" object="shield" path="pShield" parent="melon0"/>
+
+    <pause name="pause"/>
+    <destroy wait="100" name="d0" object="cone0"/>
+    <destroy name="d1" object="cone1"/>
+                
+    <text wait="10000" name="REACHING"/>
+    <text wait="2000" name="END"/>
+    <text wait="2000" name="OF"/>
+    <text wait="2000" name="LEVEL"/>
+    
+    <end name="theend" wait="3000" />
+</level>

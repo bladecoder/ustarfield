@@ -1,0 +1,210 @@
+<level>
+    <definepath name="pStatic" type="static" scrollable="true">
+        <point x="0" y="0"/>
+    </definepath>
+ 
+    <definepath name="pRight" type="vector" scrollable="true" 
+        speed="40" anchor="right,vcenter">
+        <point x="0" y="0" />
+        <point x="1" y="0" />
+    </definepath>
+
+    <definepath name="pLeft" type="vector" scrollable="true" 
+        speed="40" anchor="left,vcenter">
+        <point x="0" y="0" />
+        <point x="-1" y="0" />
+    </definepath>
+    
+    <definepath name="pTop" type="vector" scrollable="true" 
+        speed="80" anchor="hcenter,bottom">
+        <point x="0" y="0" />
+        <point x="0" y="1" />
+    </definepath>    
+    
+    <definepath name="pBottom" type="vector" scrollable="true" 
+        speed="80" anchor="hcenter,top">
+        <point x="0" y="0" />
+        <point x="0" y="-1" />
+    </definepath>
+    
+    <definepath name="pBottomLeft" type="vector" scrollable="true" 
+        speed="80" anchor="leff,bottom">
+        <point x="0" y="0" />
+        <point x="-1" y="1" />
+    </definepath>
+    
+    <definepath name="pBottomRight" type="vector" scrollable="true" 
+        speed="80" anchor="right,bottom">
+        <point x="0" y="0" />
+        <point x="1" y="1" />
+    </definepath>
+
+    <definepath name="pTPlayer" type="targetplayer" speed="70">
+        <point x="6" y="6" />
+    </definepath>
+        
+    <definepath name="pZigZag" type="free" speed="100" scrollable="true"
+        loop="2">
+        <point percent="true" x="10" y="-20" />
+        <point percent="true" x="90" y="-20" />
+    </definepath>
+ 
+        
+    <definepath name="pEllipse" type="free" speed="130" 
+            scrollable="true" loop="1">
+        <point percent="true" x="50" y="-10" />
+        <point percent="true" x="27" y="3" />
+        <point percent="true" x="11" y="10" />
+        <point percent="true" x="0" y="20" />
+        <point percent="true" x="0" y="30"/>
+        <point percent="true" x="10" y="40" />
+        <point percent="true" x="30" y="48" />
+        <point percent="true" x="50" y="50" />
+        <point percent="true" x="77" y="47" />
+        <point percent="true" x="92" y="37" />
+        <point percent="true" x="95" y="30"/>
+        <point percent="true" x="95" y="20" />
+        <point percent="true" x="91" y="12" />
+        <point percent="true" x="78" y="4" />
+    </definepath>
+        
+    <definepath name="pBlade" type="free" speed="160">
+        <point percent="true" x="90" y="-20" />
+        <point percent="true" x="85" y="10" />
+        <point percent="true" x="70" y="15" />
+        <point percent="true" x="60" y="27" />
+        <point percent="true" x="62" y="43" />
+        <point percent="true" x="83" y="50" />
+        <point percent="true" x="95" y="32" />
+        <point percent="true" x="60" y="8" />
+        <point percent="true" x="42" y="20" />
+        <point percent="true" x="26" y="15" />
+        <point percent="true" x="10" y="22" />
+        <point percent="true" x="5" y="42" />
+        <point percent="true" x="20" y="70" />
+        <point percent="true" x="80" y="83" />
+        <point percent="true" x="200" y="300" />
+    </definepath>
+ 
+    <definepath name="pPunk" type="free" speed="160">
+        <point percent="true" x="10" y="-24" />
+        <point percent="true" x="15" y="60" />
+        <point percent="true" x="50" y="85" />
+        <point percent="true" x="80" y="60" />
+        <point percent="true" x="75" y="25" />
+        <point percent="true" x="55" y="45" />
+        <point percent="true" x="30" y="25" />
+        <point percent="true" x="0" y="300" />
+    </definepath>
+
+    <definepath name="pAtomo" type="free" speed="160">
+        <point percent="true" x="37" y="-24" />
+        <point percent="true" x="45" y="10" />
+        <point percent="true" x="35" y="22" />
+        <point percent="true" x="42" y="45" />
+        <point percent="true" x="55" y="60" />
+        <point percent="true" x="95" y="36" />
+        <point percent="true" x="62" y="5" />
+        <point percent="true" x="15" y="38" />
+        <point percent="true" x="-50" y="300" />
+    </definepath>
+
+    <!-- COLUMN STATIC PATHS -->
+    <definepath name="pC0" type="static" scrollable="true">
+        <point x="-50" y="-25"/>
+    </definepath>
+
+    <definepath name="pC1" type="static" scrollable="true">
+        <point x="0" y="-25"/>
+    </definepath>
+    <definepath name="pC2" type="static" scrollable="true">
+        <point x="18" y="-25"/>
+    </definepath>
+    <definepath name="pC3" type="static" scrollable="true">
+        <point x="36" y="-25"/>
+    </definepath>
+    <definepath name="pC4" type="static" scrollable="true">
+        <point x="54" y="-25"/>
+    </definepath>
+    <definepath name="pC5" type="static" scrollable="true">
+        <point x="72" y="-25"/>
+    </definepath>
+    <definepath name="pC6" type="static" scrollable="true">
+        <point x="90" y="-25"/>
+    </definepath>
+    <definepath name="pC7" type="static" scrollable="true">
+        <point x="113" y="-25"/>
+    </definepath>
+    
+    <!-- COLUMN SPEED PATHS -->
+    <definepath name="pSC1" type="vector" speed="100">
+        <point x="0" y="-25"/>
+        <point x="0" y="1"/>
+    </definepath>
+    <definepath name="pSC2" type="vector" speed="100">
+        <point x="18" y="-25"/>
+        <point x="0" y="1"/>
+    </definepath>
+    <definepath name="pSC3" type="vector" speed="100">
+        <point x="36" y="-25"/>
+        <point x="0" y="1"/>
+    </definepath>
+    <definepath name="pSC4" type="vector" speed="100">
+        <point x="54" y="-25"/>
+        <point x="0" y="1"/>
+    </definepath>
+    <definepath name="pSC5" type="vector" speed="100">
+        <point x="72" y="-25"/>
+        <point x="0" y="1"/>
+    </definepath>
+    <definepath name="pSC6" type="vector" speed="100">
+        <point x="90" y="-25"/>
+        <point x="0" y="1"/>
+    </definepath>
+    <definepath name="pSC7" type="vector" speed="120">
+        <point x="108" y="-25"/>
+        <point x="0" y="1"/>
+    </definepath>
+
+    <!-- RANDOM COLUMN -->
+    <definepath name="pCRand" type="static" scrollable="true">
+        <point x="10108" y="-30" />
+    </definepath>
+    
+    <definepath name="pFly" type="vector" speed="140">
+        <point x="10108" y="-24" />
+        <point x="0" y="1" />
+    </definepath>
+ 
+    <!-- WAVE -->
+    <definepath name="pWave" type="free" speed="70">
+        <point percent="true" x="50" y="-20" />
+        <point percent="true" x="47" y="25" />
+        <point percent="true" x="58" y="10" />
+        <point percent="true" x="65" y="24" />
+        <point percent="true" x="78" y="12" />
+        <point percent="true" x="92" y="28" />
+        <point percent="true" x="78" y="12" />
+        <point percent="true" x="65" y="27" />
+        <point percent="true" x="58" y="12" />
+        <point percent="true" x="47" y="28" />
+        <point percent="true" x="33" y="12" />
+        <point percent="true" x="24" y="23" />
+        <point percent="true" x="13" y="14" />
+        <point percent="true" x="-47" y="64" />
+    </definepath>
+
+    <!-- RANDOM -->
+    <definepath name="pRandom" type="random" speed="70">
+        <point percent="true" x="40" y="-20" />
+        <point x="1000"/><!-- x is the ms that the path remains constant -->
+    </definepath>
+
+    <!-- SQUARE -->
+    <definepath name="pSquare" type="free" speed="150">
+        <point percent="true" x="100" y="5"/>
+        <point percent="true" x="0" y="0"/>
+        <point percent="true" x="0" y="85"/>
+        <point percent="true" x="200" y="90"/>
+    </definepath>    
+</level>

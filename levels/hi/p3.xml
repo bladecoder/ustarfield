@@ -1,0 +1,177 @@
+<level>
+    <enemy wait="2000" name="worm0" path="pSquare" object="wormhead"/>
+    <enemy wait="20" name="ball1" path="pSquare" object="ball"/>
+    <enemy wait="40" name="ball2" path="pSquare" object="ball"/>
+    <enemy wait="40" name="ball3" path="pSquare" object="ball"/>
+    <enemy wait="40" name="ball4" path="pSquare" object="ball"/>
+    <enemy wait="40" name="ball5" path="pSquare" object="ball"/>
+    <enemy wait="40" name="ball6" path="pSquare" object="ball"/>
+    <enemy wait="40" name="ball7" path="pSquare" object="ball"/>
+    <enemy wait="40" name="ball8" path="pSquare" object="ball"/>
+    <enemy wait="40" name="ball9" path="pSquare" object="ball"/>
+    <enemy wait="40" name="ball10" path="pSquare" object="ball"/>
+    <enemy wait="40" name="ball11" path="pSquare" object="ball"/>
+    <enemy wait="40" name="ball12" path="pSquare" object="ball"/>
+ 
+    <enemy wait="500" name="fly0" object="fly" path="pSC4"/>
+    <enemy wait="500" name="fly1" object="fly" path="pSC5"/>
+    <enemy name="fly2" object="fly" path="pSC3"/>
+    <enemy wait="500" name="fly3" object="fly" path="pSC6"/>
+    <enemy name="fly4" object="fly" path="pSC2"/>
+    <enemy wait="500" name="fly5" object="fly" path="pSC7"/>
+    <enemy name="fly6" object="fly" path="pSC1"/>
+    
+    <enemy wait="500" name="worm1" path="pEllipse" object="wormhead"/>
+    <enemy wait="20" name="ball13" path="pEllipse" object="ball"/>
+    <enemy wait="40" name="ball14" path="pEllipse" object="ball"/>
+    <enemy wait="40" name="ball15" path="pEllipse" object="ball"/>
+    <enemy wait="40" name="ball16" path="pEllipse" object="ball"/>
+    <enemy wait="40" name="ball17" path="pEllipse" object="ball"/>
+    <enemy wait="40" name="ball18" path="pEllipse" object="ball"/>
+    <enemy wait="40" name="ball19" path="pEllipse" object="ball"/>
+    <enemy wait="40" name="ball20" path="pEllipse" object="ball"/>
+    <enemy wait="40" name="ball21" path="pEllipse" object="ball"/>
+    <enemy wait="40" name="ball22" path="pEllipse" object="ball"/>
+    <enemy wait="40" name="ball23" path="pEllipse" object="ball"/>
+    <enemy wait="40" name="ball24" path="pEllipse" object="ball"/>
+   
+    <enemy wait="1500" name="fly7" object="fly" path="pSC4"/>
+    <enemy wait="500" name="fly8" object="fly" path="pSC5"/>
+    <enemy name="fly9" object="fly" path="pSC3"/>
+    <enemy wait="500" name="fly3" object="fly" path="pSC6"/>
+    <enemy name="fly10" object="fly" path="pSC2"/>
+    <enemy wait="500" name="fly11" object="fly" path="pSC7"/>
+    <enemy name="fly12" object="fly" path="pSC1"/>
+
+    <enemy wait="1500" name="bomb0" object="bomb" path="pC1"/>
+    <enemy name="bomb1" object="bomb" path="pC3"/>
+    <enemy name="bomb2" object="block" path="pC5"/>
+    <enemy name="bomb3" object="bomb" path="pC7"/>
+    <enemy wait="5000" name="bomb4" object="bomb" path="pC1"/>
+    <enemy name="bomb5" object="bomb" path="pC3"/>
+    <enemy name="bomb6" object="bomb" path="pC5"/>
+    <enemy name="bomb7" object="block" path="pC7"/>
+
+    <definepath name="pToCenter1" type="free" speed="180" scrollable="true"
+        loop="2">
+        <point percent="true" x="40" y="-20" />
+        <point percent="true" x="10" y="40" />
+    </definepath>
+    
+    <definepath name="pToCenter2" type="free" speed="180" scrollable="true"
+        loop="2">
+        <point percent="true" x="40" y="-20" />
+        <point percent="true" x="30" y="40" />
+    </definepath>
+    
+    <definepath name="pToCenter3" type="free" speed="180" scrollable="true"
+        loop="2">
+        <point percent="true" x="40" y="-20" />
+        <point percent="true" x="50" y="40" />
+    </definepath>
+    
+    <definepath name="pToCenter4" type="free" speed="180" scrollable="true"
+        loop="2">
+        <point percent="true" x="40" y="-20" />
+        <point percent="true" x="70" y="40" />
+    </definepath>
+    
+    <definepath name="pToCenter5" type="free" speed="180" scrollable="true"
+        loop="2">
+        <point percent="true" x="40" y="-20" />
+        <point percent="true" x="90" y="40" />
+    </definepath>
+
+    <enemy wait="3000" name="blade0" object="blade" path="pToCenter1"/>
+    <!--enemy name="blade1" object="blade" path="pToCenter2"/-->
+    <enemy name="blade2" object="blade" path="pToCenter3"/>
+    <enemy name="blade3" object="blade" path="pToCenter4"/>
+    <enemy name="blade4" object="blade" path="pToCenter5"/>
+    
+    <enemy wait="1000" name="blade5" object="blade" path="pToCenter1"/>
+    <enemy name="blade6" object="blade" path="pToCenter2"/>
+    <!--enemy name="blade7" object="blade" path="pToCenter3"/-->
+    <enemy name="blade8" object="blade" path="pToCenter4"/>
+    <!--enemy name="blade9" object="blade" path="pToCenter5"/-->
+
+    
+    <enemy wait="1000" name="atomo0" object="atomo" path="pSquare"/>
+    <enemy wait="300" name="atomo1" object="atomo" path="pSquare"/>
+    <enemy wait="300" name="atomo2" object="atomo" path="pSquare"/>
+    <enemy wait="300" name="atomo3" object="atomo" path="pSquare"/>
+    <enemy wait="300" name="atomo4" object="atomo" path="pSquare"/>
+    <enemy wait="300" name="atomo5" object="atomo" path="pSquare"/>
+    <enemy wait="300" name="atomo6" object="atomo" path="pSquare"/>
+    <enemy wait="300" name="atomo7" object="atomo" path="pSquare"/>
+    <enemy wait="300" name="atomo8" object="atomo" path="pSquare"/>
+    <enemy wait="300" name="atomo9" object="atomo" path="pSquare"/>
+    <enemy wait="300" name="atomo10" object="atomo" path="pSquare"/>
+    <enemy wait="300" name="atomo11" object="atomo" path="pSquare"/>
+    <enemy wait="300" name="atomo12" object="atomo" path="pSquare"/>
+    <enemy wait="300" name="atomo13" object="atomo" path="pSquare"/>
+    <enemy wait="300" name="atomo14" object="atomo" path="pSquare"/>
+    <enemy wait="300" name="atomo15" object="atomo" path="pSquare"/>
+    <enemy wait="300" name="atomo16" object="atomo" path="pSquare"/>
+    <enemy wait="300" name="atomo17" object="atomo" path="pSquare"/>
+    <enemy wait="300" name="atomo18" object="atomo" path="pSquare"/>
+    <enemy wait="300" name="atomo19" object="atomo" path="pSquare"/>
+    <enemy wait="300" name="atomo20" object="atomo" path="pSquare"/>
+
+    <definepath name="pLZig" type="free" speed="50" 
+        loop="2" scrollable="true">
+        <point x="30" y="-100"/>
+        <point x="73" y="-100"/>
+    </definepath>
+    
+    <definepath name="pRZig" type="free" speed="50" 
+        loop="2" scrollable="true">
+        <point x="131" y="-100"/>
+        <point x="88" y="-100"/>
+    </definepath>
+    
+    <definepath name="pRF" type="follow" anchor="right,vcenter">
+        <point x="0" y="0"/>
+    </definepath>
+    
+    <definepath name="pLF" type="follow" anchor="left,vcenter">
+        <point x="0" y="0"/>
+    </definepath>
+    
+    <defineobject name="block3" width="1" height="1" 
+        end="expl" energy = "950"/>
+
+    <enemy wait="2000" name="block30" object="block3" path="pRZig"/>
+    <enemy name="block31" object="block3" path="pLZig"/>
+    <enemy name="rafter0" object="rafter" path="pRF" parent="block30"/>
+    <enemy name="rafter1" object="rafter" path="pLF" parent="block31"/>
+
+    <enemy wait="12000" name="dlcanyon0" object="dlcanyon"  path="pC2"/>
+    <enemy name="dlcanyon1" object="drcanyon"  path="pC7"/>
+    <enemy wait="900" name="rafter2" object="rafter" path="pC0"/>
+    <enemy name="rafter3" object="rafter" path="pC6"/>
+
+    <enemy wait="2000" name="lcanyon0" object="rcanyon"  path="pC1"/>
+    <enemy wait="1000" name="lcanyon1" object="lcanyon"  path="pC7"/>
+    <enemy wait="3000" name="lcanyon2" object="rcanyon"  path="pC1"/>
+    <!--enemy wait="1000" name="lcanyon3" object="lcanyon"  path="pC7"/-->
+   
+    <enemy wait="2000" name="dlcanyon3" object="dlcanyon"  path="pC3"/>
+    <enemy name="dlcanyon7" object="dlcanyon"  path="pC1"/>
+    <enemy wait="900" name="rafter4" object="rafter" path="pC1"/>
+    
+    <enemy wait="2000" name="lcanyon4" object="rcanyon"  path="pC1"/>
+    <!--enemy wait="1000" name="lcanyon5" object="lcanyon"  path="pC7"/-->
+    <!--enemy wait="3000" name="lcanyon6" object="rcanyon"  path="pC1"/-->
+    <enemy wait="1000" name="lcanyon7" object="lcanyon"  path="pC7"/>
+        
+    <enemy wait="6000" name="dlcanyon4" object="tcanyon"  path="pC7"/>
+    <enemy name="dlcanyon5" object="drcanyon"  path="pC5"/>
+    <enemy name="dlcanyon6" object="dlcanyon"  path="pC3"/>
+    <enemy wait="900" name="rafter6" object="rafter" path="pC3"/>
+    
+    <enemy wait="8000" name="block30" object="block3" path="pRZig"/>
+    <enemy name="block31" object="block3" path="pLZig"/>
+    <enemy name="rafter0" object="rafter" path="pRF" parent="block30"/>
+    <enemy name="rafter1" object="rafter" path="pLF" parent="block31"/>
+
+</level>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<!-- Created with Sodipodi ("http://www.sodipodi.com/") -->
+<svg
+   id="svg121"
+   sodipodi:version="0.31"
+   width="210mm"
+   height="297mm"
+   sodipodi:docbase="art/"
+   sodipodi:docname="art/bullet1.svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs
+     id="defs123">
+    <linearGradient
+       id="linearGradient128">
+      <stop
+         style="stop-color:#ff0000;stop-opacity:1;"
+         offset="0.000000"
+         id="stop129" />
+      <stop
+         style="stop-color:#ffff3f;stop-opacity:1;"
+         offset="1.000000"
+         id="stop130" />
+    </linearGradient>
+    <linearGradient
+       xlink:href="#linearGradient128"
+       id="linearGradient131"
+       x1="0.552242"
+       y1="0.953128"
+       x2="0.522388"
+       y2="0.00781255"
+       gradientUnits="objectBoundingBox"
+       spreadMethod="pad" />
+    <radialGradient
+       xlink:href="#linearGradient128"
+       id="radialGradient132"
+       cx="0.5"
+       cy="0.5"
+       fx="0.5"
+       fy="0.5"
+       r="0.5"
+       gradientUnits="objectBoundingBox"
+       spreadMethod="pad" />
+  </defs>
+  <sodipodi:namedview
+     id="base" />
+  <path
+     style="font-size:12;fill:url(#linearGradient131);fill-rule:evenodd;stroke-width:1pt;stroke:none;stroke-opacity:1;fill-opacity:1;"
+     d="M 471.919 466.986 C 471.919 563.198 411.053 897.796 350.24 897.796 C 289.426 897.796 251.58 563.198 251.58 466.986 C 251.58 370.773 300.936 292.688 361.75 292.688 C 422.563 292.688 471.919 370.773 471.919 466.986 z "
+     id="path127"
+     sodipodi:nodetypes="ccccc"
+     transform="matrix(1.01493,0,0,0.760872,-18.5544,347.88)" />
+</svg>

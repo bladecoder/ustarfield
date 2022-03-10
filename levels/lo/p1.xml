@@ -1,0 +1,231 @@
+<level>
+    <enemy name="fly1" path="pFly" object="fly" />
+    <enemy wait="3000" name="fly2" path="pFly" object="fly" />
+    
+    <enemy name="bomb0" path="pCRand" object="bomb"/>
+    <enemy wait="2000" name="bomb1" path="pCRand" object="bomb"/>
+    <enemy wait="2000" name="bomb2" path="pCRand" object="bomb"/>
+    <enemy wait="3000" name="bomb3" path="pCRand" object="bomb"/>
+    
+    <enemy wait="2000" name="dummy0" path="pDummy" object="dummy"/>
+    
+    <enemy wait="3000" name="bomb4" path="pCRand" object="bomb"/>
+    <enemy wait="3000" name="bomb5" path="pCRand" object="bomb"/>
+    
+    <destroy wait="9000" name="destroy" object="dummy0"/>
+
+    <enemy wait="1000" name="bh1" path="pHRcenter" object="sbh"/>
+    <enemy wait="3000" name="bh2" path="pHRcenter" object="sbh"/>
+
+    <!-- PUNK GROUP -->
+    <enemy wait="1000" name="punk0" path="pPunk" object="punk"/>
+    <enemy wait="300" name="punk1" path="pPunk" object="punk"/>
+    <enemy wait="300" name="punk2" path="pPunk" object="punk"/>
+    <enemy wait="300" name="punk3" path="pPunk" object="punk"/>
+    <enemy wait="300" name="punk4" path="pPunk" object="punk"/>
+    <enemy wait="300" name="punk5" path="pPunk" object="punk"/>
+    <enemy wait="300" name="punk6" path="pPunk" object="punk"/>
+    <enemy wait="300" name="punk7" path="pPunk" object="punk"/>
+    <enemy wait="300" name="punk8" path="pPunk" object="punk"/>
+    <enemy wait="300" name="punk9" path="pPunk" object="punk"/>
+
+    <!-- BLADE GROUP -->
+    <enemy wait="1000" name="blade0" path="pBlade" object="blade"/>
+    <enemy wait="300" name="blade1" path="pBlade" object="blade"/>
+    <enemy wait="300" name="blade2" path="pBlade" object="blade"/>
+    <enemy wait="300" name="blade3" path="pBlade" object="blade"/>
+    <enemy wait="300" name="blade4" path="pBlade" object="blade"/>
+    <enemy wait="300" name="blade5" path="pBlade" object="blade"/>
+    <enemy wait="300" name="blade6" path="pBlade" object="blade"/>
+    <enemy wait="300" name="blade7" path="pBlade" object="blade"/>
+    <enemy wait="300" name="blade8" path="pBlade" object="blade"/>
+    <enemy wait="300" name="blade9" path="pBlade" object="blade"/>
+    <enemy wait="300" name="blade10" path="pBlade" object="blade"/>
+    
+    <!-- ATOM GROUP -->
+   
+    <enemy wait="1000" name="atomo0" path="pAtomo" object="atomo"/>
+    <enemy wait="300" name="atomo1" path="pAtomo" object="atomo"/>
+    <enemy wait="300" name="atomo2" path="pAtomo" object="atomo"/>
+    <enemy wait="300" name="atomo3" path="pAtomo" object="atomo"/>
+    <enemy wait="300" name="atomo4" path="pAtomo" object="atomo"/>
+    <enemy wait="300" name="atomo5" path="pAtomo" object="atomo"/>
+    <enemy wait="300" name="atomo6" path="pAtomo" object="atomo"/>
+    <enemy wait="300" name="atomo7" path="pAtomo" object="atomo"/>
+    <enemy wait="300" name="atomo8" path="pAtomo" object="atomo"/>
+    <enemy wait="300" name="atomo9" path="pAtomo" object="atomo"/>
+
+    <!-- FIRE BONUS -->
+    <enemy wait="1000" name="bh3" path="pHRcenter" object="fbh"/>
+
+    <!-- BLOCKS -->
+   
+    <enemy defined="true" name="tbullet2" path="pTop" 
+        object="bullet2" parent="*"/>
+    
+  
+    <enemy wait="3000" name="block0" path="pZigZag" object="block"/>
+    <enemy wait="4000" name="block1" path="pZigZag" object="block"/>
+    <enemy wait="4000" name="bomb6" path="pCRand" object="bomb"/>
+    <enemy wait="4000" name="block2" path="pZigZag" object="block"/>
+    <enemy wait="4000" name="block3" path="pZigZag" object="block"/>
+    <enemy wait="4000" name="bomb7" path="pCRand" object="bomb"/>
+    <enemy wait="4000" name="block4" path="pZigZag" object="block"/>
+    <enemy wait="4000" name="block5" path="pZigZag" object="block"/>
+    <enemy wait="4000" name="bomb8" path="pCRand" object="bomb"/>
+    <enemy wait="4000" name="block6" path="pZigZag" object="block"/>
+    <enemy wait="4000" name="block7" path="pZigZag" object="block"/>
+
+    <!-- CIRCLE BLADES -->
+    <enemy wait="3000" name="blade0" path="pEllipse" object="blade"/>
+    <enemy wait="300" name="blade1" path="pEllipse" object="blade"/>
+    <enemy wait="300" name="blade2" path="pEllipse" object="blade"/>
+    <enemy wait="300" name="blade3" path="pEllipse" object="blade"/>
+    <enemy wait="300" name="blade4" path="pEllipse" object="blade"/>
+    <enemy wait="300" name="blade5" path="pEllipse" object="blade"/>
+    <enemy wait="300" name="blade6" path="pEllipse" object="blade"/>
+    <enemy wait="300" name="blade7" path="pEllipse" object="blade"/>
+    <enemy wait="300" name="blade8" path="pEllipse" object="blade"/>
+    <enemy wait="300" name="blade9" path="pEllipse" object="blade"/>
+    <enemy wait="300" name="blade10" path="pEllipse" object="blade"/>
+
+    <!-- BLOCKS -->
+    <enemy wait="3000" name="block0" path="pC1" object="rafter"/>
+
+    <enemy wait="2000" name="centinel0" path="pZigZag" object="centinel"/>
+    
+    <enemy wait="3000" name="block6" path="pC3" object="rafter"/>
+   
+    <enemy wait="2000" name="centinel1" path="pZigZag" object="centinel"/>
+    
+    <enemy wait="3000" name="block11" path="pC1" object="rafter"/>
+
+    <enemy wait="2000" name="centinel2" path="pZigZag" object="centinel"/>
+    
+    <enemy wait="3000" name="block16" path="pC3" object="rafter"/>
+
+    <enemy wait="2000" name="bomb30" path="pCRand" object="bomb"/>
+
+    <!-- ROW OF BLOCKS -->
+    <enemy wait="5000" name="block21" path="pC7" object="block"/>
+    <enemy name="block22" path="pC6" object="block"/>
+    <!--enemy name="block23" path="pC5" object="tcanyon"/-->
+    <enemy name="block24" path="pC4" object="tcanyon"/>
+    <enemy name="block25" path="pC3" object="block"/>
+    <enemy name="block26" path="pC2" object="block"/>
+    <enemy name="block27" path="pC1" object="block"/>
+
+    <enemy wait="3000" name="bomb30" path="pCRand" object="bomb"/>
+
+    <enemy wait="3000" name="block6" path="pC3" object="rafter"/>
+    
+    <enemy wait="1800" name="block38" path="pC3" object="block"/>
+    
+    <enemy wait="3500" name="block40" path="pC5" object="block"/>
+    
+    <enemy wait="1500" name="tcanyon20" path="pC1" object="tcanyon"/>
+    <enemy name="block35" path="pC2" object="block"/>
+    <enemy name="block37" path="pC4" object="block"/>
+    <enemy name="block41" path="pC5" object="block"/>
+    
+    <enemy wait="1300" name="block36" path="pC1" object="block"/>
+    <enemy  name="block39" path="pC3" object="block"/>
+    <enemy  name="rcanyon20" path="pC4" object="rcanyon"/>
+
+    <!-- BLADES MIX-->
+    <!--enemy wait="7000" name="blade30" path="pC1" object="blade"/>
+    <enemy name="blade31" path="pC2" object="blade"/>
+    <enemy name="blade32" path="pC3" object="blade"/>
+    <enemy name="blade33" path="pC4" object="blade"/>
+    <enemy name="blade34" path="pC5" object="blade"/>
+    <enemy name="blade35" path="pC6" object="blade"/>
+    <enemy name="blade36" path="pC7" object="blade"/-->
+    
+    <enemy wait="5000" name="blade0" path="pEllipse" object="blade"/>
+    <enemy name="blade20" path="pBlade" object="blade"/>
+    <!--enemy wait="300" name="blade1" path="pEllipse" object="blade"/>
+    <enemy name="blade21" path="pBlade" object="blade"/-->
+    <enemy wait="600" name="blade2" path="pEllipse" object="blade"/>
+    <enemy name="blade22" path="pBlade" object="blade"/>
+    <!--enemy wait="300" name="blade3" path="pEllipse" object="blade"/>
+    <enemy name="blade23" path="pBlade" object="blade"/-->
+    <enemy wait="600" name="blade4" path="pEllipse" object="blade"/>
+    <enemy name="blade24" path="pBlade" object="blade"/>
+    <!--enemy wait="300" name="blade5" path="pEllipse" object="blade"/>
+    <enemy name="blade25" path="pBlade" object="blade"/-->
+    <enemy wait="600" name="blade6" path="pEllipse" object="blade"/>
+    <enemy name="blade26" path="pBlade" object="blade"/>
+    <!--enemy wait="300" name="blade7" path="pEllipse" object="blade"/>
+    <enemy name="blade27" path="pBlade" object="blade"/-->
+    <enemy wait="600" name="blade8" path="pEllipse" object="blade"/>
+    <enemy name="blade28" path="pBlade" object="blade"/>
+    <!--enemy wait="300" name="blade9" path="pEllipse" object="blade"/>
+    <enemy name="blade29" path="pBlade" object="blade"/-->
+    <enemy wait="600" name="blade10" path="pEllipse" object="blade"/>
+    <enemy name="blade210" path="pBlade" object="blade"/>
+
+
+    <!--enemy wait="300" name="centinel0" path="pZigZag" object="centinel"/>
+    <enemy wait="600" name="centinel1" path="pZigZag" object="centinel"/>
+    <enemy wait="600" name="centinel2" path="pZigZag" object="centinel"/>
+    <enemy wait="600" name="centinel3" path="pZigZag" object="centinel"/>
+    <enemy wait="600" name="centinel4" path="pZigZag" object="centinel"/>
+    <enemy wait="600" name="centinel5" path="pZigZag" object="centinel"/>
+    <enemy wait="600" name="centinel6" path="pZigZag" object="centinel"/>
+    <enemy wait="600" name="centinel7" path="pZigZag" object="centinel"/>
+    <enemy wait="600" name="centinel8" path="pZigZag" object="centinel"/>
+    <enemy wait="600" name="centinel9" path="pZigZag" object="centinel"/-->
+
+    <enemy wait="3000" name="bh3" path="pHRcenter" object="ebh"/>
+
+    <!-- HARD ENEMY -->
+    <defineobject name="enemy1" width="2" height="1" 
+        end="expl" fire="pbullet" energy = "200" 
+        firedelay="1900" delay="500" loop="1"/>
+    
+    <enemy wait="12000" name="hard0" path="pRandom" object="enemy1"/>
+
+
+    <!-- CANYONS -->
+    <enemy wait="2000" name="rcanyon1" path="pC1" object="rcanyon"/>
+    <enemy wait="6000" name="rcanyon2" path="pC1" object="rcanyon"/>
+    <enemy wait="6000" name="lcanyon3" path="pC7" object="lcanyon"/>
+    <enemy wait="6000" name="rcanyon4" path="pC1" object="rcanyon"/>
+    <enemy wait="6000" name="lcanyon5" path="pC7" object="lcanyon"/>
+    <enemy wait="6000" name="rcanyon6" path="pC1" object="rcanyon"/>
+    
+    <!-- HARD ENEMY2 -->
+    <enemy wait="12000" name="hard2" path="pRandom" object="enemy1"/>
+    <enemy wait="3000" name="hard3" path="pRandom" object="enemy1"/>
+
+    <enemy wait="2000" name="rcanyon1" path="pC1" object="rcanyon"/>
+    <enemy wait="6000" name="rcanyon2" path="pC1" object="rcanyon"/>
+    <enemy wait="6000" name="lcanyon3" path="pC7" object="lcanyon"/>
+    <enemy wait="6000" name="rcanyon4" path="pC1" object="rcanyon"/>
+    <enemy wait="6000" name="lcanyon5" path="pC7" object="lcanyon"/>
+    <enemy wait="6000" name="rcanyon6" path="pC1" object="rcanyon"/>
+ 
+    <enemy wait="3000" name="bh5" path="pHRcenter" object="ebh"/>
+    <enemy wait="15000" name="bh9" path="pHRcenter" object="lbh"/>
+
+    <enemy wait="10000" name="hard4" path="pRandom" object="enemy1"/>
+    <enemy wait="2000" name="bh3" path="pHRcenter" object="ebh"/>
+    <enemy wait="3000" name="hard5" path="pRandom" object="enemy1"/>
+    <enemy wait="3000" name="hard6" path="pRandom" object="enemy1"/>
+    
+    <enemy wait="5000" name="bh7" path="pHRcenter" object="ebh"/>
+    <enemy wait="5000" name="bh8" path="pHRcenter" object="ebh"/>
+    
+    <text wait="20000" name="REACHING"/>
+    <enemy wait="1000" name="bh10" path="pHRcenter" object="lbh"/>
+    <text wait="2000" name="END"/>
+    <text wait="2000" name="OF"/>
+    <text wait="2000" name="LEVEL"/>
+
+    <destroy name="h0" object="hard0" />
+    <destroy name="h1" object="hard2" />
+    <destroy name="h2" object="hard3" />
+    <destroy name="h3" object="hard4" />
+    <destroy name="h4" object="hard5" />
+    <destroy name="h5" object="hard6" />
+</level>

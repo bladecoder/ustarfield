@@ -1,0 +1,3 @@
+#!/bin/sh
+
+java -classpath parserclasses:/usr/share/java/xercesImpl.jar LevelParser levels/lo/$1.xml tmpclasses/$1.evt

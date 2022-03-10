@@ -1,0 +1,182 @@
+<level>
+    <!-- BONUS -->
+    <defineobject name="sbh" img="bonusholder.png"
+        width="5" height="1" damage="10" points="10" energy="10" 
+        end="lexpl,speedbonus1" loop="1" delay="200"/>
+    
+    <defineobject name="fbh" img="bonusholder.png"
+        width="5" height="1" damage="10" points="10" energy="10" 
+        end="lexpl,firebonus1" loop="1" delay="200"/>
+    
+    <defineobject name="ebh" img="bonusholder.png"
+        width="5" height="1" damage="10" points="10" energy="10" 
+        end="lexpl,energybonus1" loop="1" delay="200"/>
+
+    <defineobject name="lbh" img="bonusholder.png"
+        width="5" height="1" damage="10" points="10" energy="10" 
+        end="lexpl,lifebonus1" loop="1" delay="200"/>
+
+    <definepath name="pHRcenter" type="vector" speed="35">
+        <point percent="true" x="-24" y="50"/>
+        <point x="1" y="0"/>
+    </definepath>
+
+    <defineobject name="speedbonus" bulletCollision="false"
+        width="5" height="1" damage="0" points="10" energy="1" 
+        loop="1" delay="150" end="speed"/>
+    
+    <defineobject name="firebonus" bulletCollision="false"
+        width="4" height="1" damage="0" points="10" energy="1" 
+        loop="1" delay="150" end="fire"/>
+     
+    <defineobject name="energybonus" bulletCollision="false"
+        width="1" height="1" damage="0" points="10" energy="1" 
+        end="energy"/>
+    
+    <defineobject name="lifebonus" img="icon.png" bulletCollision="false"
+        width="1" height="1" damage="0" points="10" energy="1" 
+        end="life"/>
+   
+    <enemy defined="true" name="speedbonus1" 
+        parent="*" path="pStatic" object="speedbonus"/>
+    
+    <enemy defined="true" name="firebonus1" 
+        parent="*" path="pStatic" object="firebonus"/>
+    
+    <enemy defined="true" name="energybonus1" 
+        parent="*" path="pStatic" object="energybonus"/>
+    
+    <enemy defined="true" name="lifebonus1" 
+        parent="*" path="pStatic" object="lifebonus"/>
+
+
+    <speed defined="true" name="speed" object="player" value="25"/>
+    <fire defined="true" name="fire" object="player" event="playerbullet1"/>
+    <energy defined="true" name="energy" object="player" value="50"/>
+    <life defined="true" name="life" object="player" value="1"/>
+
+    <!-- BOMBS -->
+    <destroy name="destbomb" defined="true" object="*"/>
+    
+    <defineobject name="bomb" width="2" height="1" firedelay="4000" 
+        fire="expl,destbomb,tbullet,bbullet,rbullet,lbullet,brbullet,blbullet" 
+        end="expl" energy="70" points="30" damage="30" 
+        delay="500" loop="1"/>
+
+    <!-- FLY GROUP -->
+    <defineobject name="fly" width="4" height="1" 
+	end="expl" energy="20" points="10" damage="10" 
+        delay="250" loop="1"/>
+   
+    <enemy defined="true" name="fly0" path="pFly" object="fly"/>
+
+    <defineobject name="dummy" img="fly.png" width="4" height="1" 
+        fire="fly0" firedelay="500"/>
+
+    <definepath name="pDummy" type="static">
+	<point x="-20" y="-20"/>
+    </definepath>
+
+    <!-- RTYPE -->
+    <defineobject name="rtype" width="5" height="1" 
+        end="expl" energy="30" points="30" damage="25" 
+        delay="250" loop="1"/>
+    
+    <defineobject name="wormhead" width="1" height="1" 
+        end="expl" energy="200" points="200" damage="45"/>
+
+    <defineobject name="ball" width="1" height="1" 
+        end="expl" energy="90" points="30" damage="25"/>
+
+    <!-- PUNK -->
+    <defineobject name="punk" width="2" height="1" 
+        end="expl" energy="10" points="20" damage="20" 
+        delay="250" loop="1"/>
+
+    <!-- BLADE -->
+    <defineobject name="blade" width="4" height="1" 
+        end="expl" energy="10" points="20" damage="20" 
+        delay="50" loop="1"/>
+
+    <!-- ATOM -->
+    <defineobject name="atomo" width="6" height="1" 
+        end="expl" energy="10" points="20" damage="20" 
+        delay="200" loop="1"/>
+ 
+    <!-- BLOCKS -->
+    <defineobject name="block" img="block2.png" width="1" height="1" 
+        end="expl" energy = "350"/>
+
+    <defineobject name="rafter" width="1" height="1" 
+        end="expl" energy = "350"/>
+
+    <!-- CENTINEL -->
+    <defineobject name="centinel" width="1" height="1" 
+        end="expl" energy = "40" points="60" damage="40"/>
+
+    <!-- CANYONS -->
+    <defineobject name="tcanyon" width="1" height="1" 
+        end="expl" fire="tbullet" damage="50" 
+        energy = "80" firedelay="2000" />
+ 
+    <defineobject name="rcanyon" width="1" height="1" 
+        end="expl" fire="rbullet" damage="50" 
+        energy = "40" firedelay="2000" />
+
+    <defineobject name="lcanyon" width="1" height="1" 
+        end="expl" fire="lbullet" damage="50" 
+        energy = "40" firedelay="2000" />
+    
+    <defineobject name="drcanyon" width="1" height="1" 
+        end="expl" fire="blbullet" damage="50" 
+        energy = "40" firedelay="2000" />
+
+    <defineobject name="dlcanyon" width="1" height="1" 
+        end="expl" fire="brbullet" damage="50" 
+        energy = "40" firedelay="2000" />
+
+    <!-- METEOR -->
+    <defineobject name="meteor" width="1" height="1" 
+        end="expl" energy="200" points="80" damage="70" />
+
+    <!-- MISIL -->
+    <defineobject name="misil" width="1" height="1" end="expl"
+        energy="60" points="60" damage="40"/>
+    <enemy name="misil0" defined="true" object="misil" parent="*" path="pTop"/>
+
+    <!-- GHOST -->
+    <energy defined="true" name="edummy" object="ghostdummy" value="-1"/>
+    <defineobject name="ghost" width="1" height="1" 
+        energy="250" points="100" damage="50" 
+        fire="misil0" firedelay="1300" end="edummy,expl"/>
+
+    <!-- END ENEMY -->
+    <continue name="continue" defined="true"/>
+    <defineobject name="melon2" width="1" height="1"
+        energy="600" points="600" damage="100" 
+        firedelay="1300" end="continue,expl"/>
+
+    <enemy defined="true" name="fireblade" object="blade" path="pTPlayer" parent="*"/>
+    <fire defined="true" name="fire0" object="melon0" event="fireblade"/>
+    
+    <defineobject name="shield" width="1" height="1"
+        energy="600" points="600" damage="50" end="fire0,expl"/>
+
+    
+    <defineobject name="bazooka" width="1" height="1" end="expl"
+        energy="300" points="300" damage="50" 
+        fire="misil0" firedelay="1300"/>
+
+    <definepath name="pConeL" type="follow" anchor="left">
+        <point x="-28" y="0" />
+    </definepath>
+    
+    <definepath name="pConeR" type="follow" anchor="right">
+        <point x="0" y="0" />
+    </definepath>
+    
+    <definepath name="pShield" type="follow" anchor="bottom">
+        <point x="0" y="0" />
+    </definepath>
+
+</level>
