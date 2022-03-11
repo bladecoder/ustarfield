@@ -6,7 +6,6 @@
   <property name="midp_lib" value="${midp}/lib/midpapi.zip"/>
   <property name="proguard" value="${midp}/lib/proguard.jar"/>
   <property name="app.name" value="myapp"/>
-  <property name="xercespath" value="/usr/share/java/xercesImpl.jar"/>
   <property name="arch" value="nokia"/>
   <property name="screen" value="hi"/>
   <property name="gcc.home" value="./gcc"/>
@@ -89,36 +88,35 @@
   </target-->
   
   <target name="levelparser" depends="init">
-    <mkdir dir="parserclasses"/>
+    <mkdir dir="build/parserclasses"/>
     
-    <javac destdir="parserclasses" includes="starfield/event/*.java" srcdir="src" debug="true"/>
-    <javac destdir="parserclasses" srcdir="levelparser" debug="true" 
-        classpath="${xercespath}"/>
+    <javac destdir="build/parserclasses" includes="starfield/event/*.java" srcdir="src" debug="true" source="1.8" target="1.8"/>
+    <javac destdir="build/parserclasses" srcdir="levelparser" debug="true" source="1.8" target="1.8"/>
   </target>
 
   <target name="applet" depends="init">
-    <mkdir dir="tmpclasses"/>
+    <mkdir dir="build/tmpclasses"/>
     <!--mkdir dir="tmpclasses/META-INF"/-->
-    <javac destdir="tmpclasses" srcdir="${gcc}" debug="true"/>
-    <javac destdir="tmpclasses" srcdir="src" debug="true"
-      classpath="tmpclasses" />
-    <copy file="bin/${app.name}-applet.html" todir="tmpclasses"/>
+    <javac destdir="build/tmpclasses" srcdir="${gcc}" debug="true"  source="1.8" target="1.8"/>
+    <javac destdir="build/tmpclasses" srcdir="src" debug="true"
+      classpath="build/tmpclasses"  source="1.8" target="1.8"/>
+    <copy file="bin/${app.name}-applet.html" todir="build/tmpclasses"/>
     <!--copy file="bin/MANIFEST.MF" todir="tmpclasses/META-INF" /-->
-    <copy  todir="tmpclasses">
+    <copy  todir="build/tmpclasses">
         <fileset dir="res/${screen}"/>
     </copy>
   </target>
 
   <target name="runapplet" depends="applet">
     <exec executable="appletviewer">
-      <arg line="tmpclasses/${app.name}-applet.html"/>
+      <arg line="build/tmpclasses/${app.name}-applet.html"/>
     </exec>
 
   </target>
   
   <target name="distapplet" depends="applet">
     <mkdir dir="bin"/>
-    <jar basedir="tmpclasses"
+    <jar basedir="build/tmpclasses"
         jarfile="bin/${app.name}-applet.jar">
     </jar>
   </target>

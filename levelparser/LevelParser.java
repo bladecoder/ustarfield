@@ -1,14 +1,16 @@
-import org.xml.sax.*;
-import org.xml.sax.helpers.*;
-import org.w3c.dom.Document;
+import org.xml.sax.Attributes;
+import org.xml.sax.SAXException;
+import org.xml.sax.helpers.DefaultHandler;
+
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
 import java.io.*;
-// requires XERCES parser in classpath
 
 import starfield.event.*;
 
 
-public class LevelParser extends org.xml.sax.helpers.DefaultHandler
-    implements org.xml.sax.ContentHandler {
+public class LevelParser extends DefaultHandler {
 
     int depth;
     Event event;
@@ -18,7 +20,7 @@ public class LevelParser extends org.xml.sax.helpers.DefaultHandler
         super();
     }
 
-    public static void main(java.lang.String[] args) {
+    public static void main(String[] args) {
         String inFileName = null;
         String outFileName;
 
@@ -42,25 +44,26 @@ public class LevelParser extends org.xml.sax.helpers.DefaultHandler
 
     public void parse(String xmlFile) {
         try {
-            XMLReader parser = XMLReaderFactory.createXMLReader(
-                                   "org.apache.xerces.parsers.SAXParser");
-            parser.setContentHandler(this);
-            parser.setErrorHandler(this);
-            try {
-                parser.parse(xmlFile);
-            } catch (IOException ioe) {
-                ioe.printStackTrace();
-            }
-        } catch (SAXException se) {
-            se.printStackTrace();
+            SAXParserFactory factory = SAXParserFactory.newInstance();
+            SAXParser saxParser = factory.newSAXParser();
+
+            saxParser.parse(xmlFile, this);
+            
+        } catch (SAXException | IOException | ParserConfigurationException e) {
+            e.printStackTrace();
         }
     }
 
+    @Override
     public void endDocument() {
     }
 
-    public void endElement(String namespaceURI, String localName,
-                           String qName) {
+    @Override
+    public void endElement(String namespaceURI, String qName,
+                           String localName) {
+
+        //System.out.println("end: " + localName + " depth: " + depth + " qname: " + qName);
+
         if(depth == 2) {
             if(localName.equals("definepath")) { // add point if playertarget path
                 DefinePathParams p = (DefinePathParams)event.params;
@@ -80,15 +83,17 @@ public class LevelParser extends org.xml.sax.helpers.DefaultHandler
         depth--;
     }
 
+    @Override
     public void startDocument() {
         depth = 0;
     }
 
-    public void startElement(String namespaceURI, String localName,
-                             String qname, Attributes attrList) {
+    @Override
+    public void startElement(String namespaceURI, String qName,
+                             String localName, Attributes attrList) {
         depth++;
         
-        //System.out.println("start: " + localName + " depth: " + depth);
+        //System.out.println("start: " + localName + " depth: " + depth + " qName: " + qName);
 
         switch(depth) {
             case 1:

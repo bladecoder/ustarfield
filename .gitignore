@@ -1,3 +1,5 @@
 tmpclasses
 bin
+build
+.DS_Store
 
