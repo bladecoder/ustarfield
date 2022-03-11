@@ -92,7 +92,7 @@ public class Screen extends GameCanvas {
         
         if (game_action == Canvas.GAME_C) {
            engine.toggleAutofire();
-           // Para TEST del juego: pulsando 'C' añadimos una vida
+           // Para TEST del juego: pulsando 'C' aÃ±adimos una vida
            //engine.player.lifes++;
             return;
         }

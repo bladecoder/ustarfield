@@ -7,8 +7,8 @@ public class GameTexts_es extends ResourceBundle {
     resources.put( "Instructions", 
             "El objetivo del juego es sobrevivir hasta el final de cada nivel, " +
             "detruyendo tantos enemigos como puedas.\n"+ 
-            " Mientras más enemigos destruyas, "+
-            "más puntos tendrás y conseguiras una mejor posición en la tabla de marcadores."
+            " Mientras mÃ¡s enemigos destruyas, "+
+            "mÃ¡s puntos tendrÃ¡s y conseguiras una mejor posiciÃ³n en la tabla de marcadores."
             );
     resources.put("LEVEL 1", "NIVEL 1");
     resources.put("LEVEL 2", "NIVEL 2");
