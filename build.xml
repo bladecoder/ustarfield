@@ -8,19 +8,19 @@
   <property name="app.name" value="myapp"/>
   <property name="arch" value="nokia"/>
   <property name="screen" value="hi"/>
-  <property name="gcc.home" value="./gcc"/>
-  <property name="gcc" value="${gcc.home}/src/${arch}"/>
+  <property name="backends.home" value="./backends"/>
+  <property name="backend" value="${backends.home}/src/${arch}"/>
 
   <target name="compile" depends="init">
-    <mkdir dir="tmpclasses"/>
+    <mkdir dir="build/tmpclasses"/>
     
-    <javac destdir="tmpclasses" srcdir="${gcc}"
+    <javac destdir="build/tmpclasses" srcdir="${backend}"
         bootclasspath="${midp_lib}" target="1.1" 
         classpath="${midp}/lib/nokiaui.zip"/>
 
-    <javac destdir="tmpclasses" srcdir="src"
+    <javac destdir="build/tmpclasses" srcdir="src"
         bootclasspath="${midp_lib}" target="1.1" 
-        classpath="${midp}/lib/nokiaui.zip:tmpclasses"/>
+        classpath="${midp}/lib/nokiaui.zip:build/tmpclasses"/>
   </target>
   
   <target name="init">
@@ -28,37 +28,37 @@
   </target>
 
   <target name="preverify" depends="compile">
-    <mkdir dir="classes"/>
+    <mkdir dir="build/classes"/>
     <exec executable="${midp}/bin/preverify">
       <arg line="-classpath ${midp_lib}:${midp}/lib/nokiaui.zip"/>
-      <arg line="-d classes"/>
-      <arg line="tmpclasses"/>
+      <arg line="-d build/classes"/>
+      <arg line="build/tmpclasses"/>
     </exec>
   </target>
 
   <target name="dist" depends="preverify">
-    <mkdir dir="bin"/>
-    <jar basedir="classes"
-        jarfile="bin/${app.name}.jar"
-        manifest="bin/MANIFEST.MF">
+    <mkdir dir="build/bin"/>
+    <jar basedir="build/classes"
+        jarfile="build/bin/${app.name}.jar"
+        manifest="build/bin/MANIFEST.MF">
         <fileset dir="res/${screen}"/>
-        <fileset dir="tmpclasses" includes="*.evt"/>
+        <fileset dir="build/tmpclasses" includes="*.evt"/>
     </jar>
     <!--copy file="bin/${app.name}.jad"
         tofile="bin/${app.name}.jad"/-->
-    <exec executable="bin/genjad"/>
+    <exec executable="build/bin/genjad"/>
   </target>
 
   <target name="run">
     <exec executable="${midp}/bin/emulator">
-      <arg line="-Xdescriptor:bin/${app.name}.jad"/>
+      <arg line="-Xdescriptor:build/bin/${app.name}.jad"/>
       <!--arg line="-Xverbose:exceptions"/-->
     </exec>
   </target>
  
   <target name="debug">
     <exec executable="${midp}/bin/emulator">
-      <arg line="-Xdescriptor:bin/${app.name}.jad"/>
+      <arg line="-Xdescriptor:build/bin/${app.name}.jad"/>
       <arg line="-Xdebug"/>
       <arg line="-Xrunjdwp:transport=dt_socket,address=5000,server=y"/>
     </exec>
@@ -66,12 +66,7 @@
                                                                             
   <target name="clean"
    description="Delete old build and dist directories">
-    <delete dir="classes"/>
-    <delete dir="parserclasses"/>
-    <delete dir="tmpclasses"/>
-    <delete dir="tmplib"/>
-    <delete file="bin/${app.name}.jar"/>
-    <!--delete file="bin/${app.name}.jad"/-->
+    <delete dir="build"/>
   </target>
 
   <!--target name="levels"
@@ -97,10 +92,10 @@
   <target name="applet" depends="init">
     <mkdir dir="build/tmpclasses"/>
     <!--mkdir dir="tmpclasses/META-INF"/-->
-    <javac destdir="build/tmpclasses" srcdir="${gcc}" debug="true"  source="1.8" target="1.8"/>
+    <javac destdir="build/tmpclasses" srcdir="${backend}" debug="true"  source="1.8" target="1.8"/>
     <javac destdir="build/tmpclasses" srcdir="src" debug="true"
       classpath="build/tmpclasses"  source="1.8" target="1.8"/>
-    <copy file="bin/${app.name}-applet.html" todir="build/tmpclasses"/>
+  <copy file="${app.name}.html" todir="build/tmpclasses"/>
     <!--copy file="bin/MANIFEST.MF" todir="tmpclasses/META-INF" /-->
     <copy  todir="build/tmpclasses">
         <fileset dir="res/${screen}"/>
@@ -109,7 +104,7 @@
 
   <target name="runapplet" depends="applet">
     <exec executable="appletviewer">
-      <arg line="build/tmpclasses/${app.name}-applet.html"/>
+      <arg line="build/tmpclasses/${app.name}.html"/>
     </exec>
 
   </target>

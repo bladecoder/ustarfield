@@ -33,7 +33,7 @@ public class Engine implements EventProcessor, GameManager {
     private int calibration;
     private boolean level_started;
     private boolean done;
-    private boolean autofire = true;
+    private boolean autofire = false;
 
     //private int numLevels;
 
